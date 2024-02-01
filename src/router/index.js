@@ -24,7 +24,7 @@ const routes = [
     
     children: [
       {
-        path: '/inicio',
+        path: '/',
         name: 'Inicio',
         // route level code-splitting
         // this generates a separate chunk (Home-[hash].js) for this route

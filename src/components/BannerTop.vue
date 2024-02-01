@@ -20,9 +20,9 @@ export default {
   data() {
     return {
       // Inicializa la variable rutaImagen con la ruta de la imagen
-      logoWpc: "src/assets/5.png",
-      iturcemi: "src/assets/R.png",
-      marca: "src/assets/pavel.png",
+      logoWpc: "/5.png",
+      iturcemi: "/R.png",
+      marca: "pavel.png",
 
     };
   },
