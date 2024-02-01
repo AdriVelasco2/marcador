@@ -6,12 +6,12 @@
         class="grid place-content-center bg-gradient-to-tr from-lime-400 to-lime-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-lime-500/80 bounce-in-top size-64 rounded-full"
         @click="irANuevaPagina"
       >
-        <p class="text-2xl font-sans font-semibold">3 sets</p>
+        <p class="text-2xl font-sans font-semibold ">3 sets</p>
       </button>
         </div>
         <div class="grid place-content-center">
       <button
-      class="bg-gradient-to-tr from-yellow-400 to-amber-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-amber-500/80 bounce-in-top size-64 rounded-full"
+      class="bg-gradient-to-tr from-yellow-400 to-amber-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-amber-500/80 bounce-in-top size-64 rounded-full "
       @click="irANuevaPagina"
       >
       <p class="text-2xl text-yellow-200 font-sans font-semibold drop-shadow-lg">3 sets</p>
@@ -22,6 +22,7 @@
 <div class="grid place-content-center">
 
       <button
+      @click="irAOroDos"
       class=" grid place-content-center bg-gradient-to-tr from-lime-400 to-lime-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-lime-500/80 bounce-in-top size-64 rounded-full"
 
       >
@@ -32,6 +33,7 @@
 <div class="grid place-content-center">
 
       <button
+      @click="irAOroDos"
       class="bg-gradient-to-tr from-yellow-400 to-amber-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-amber-500/80 bounce-in-top size-64 rounded-full"
 
       >
@@ -49,7 +51,13 @@ export default {
         irANuevaPagina() {
       // Navegar a la nueva página utilizando Vue Router
       this.$router.push('/OroTres');
+    },
+
+    irAOroDos() {
+      // Navegar a la nueva página utilizando Vue Router
+      this.$router.push('/OroDos');
     }
+    
 },
 }
 </script>

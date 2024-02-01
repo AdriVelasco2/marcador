@@ -5,6 +5,7 @@ import BannerTopVue from '@/components/BannerTop.vue'
 import Inicio from '@/components/Inicio.vue'
 import Botones from '@/components/Botones.vue'
 import BotonesVue from '@/components/BotonEspecial.vue'
+import OroDos from '@/components/OroDos.vue'
 const routes = [
   {
    
@@ -23,7 +24,7 @@ const routes = [
     
     children: [
       {
-        path: '/',
+        path: '/inicio',
         name: 'Inicio',
         // route level code-splitting
         // this generates a separate chunk (Home-[hash].js) for this route
@@ -32,6 +33,18 @@ const routes = [
       },
     ],
   },
+  {
+  children: [
+    {
+      path: '/orodos',
+      name: 'Oro Dos',
+      // route level code-splitting
+      // this generates a separate chunk (Home-[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: OroDos,
+    },
+  ],
+},
 ]
 
 const router = createRouter({
