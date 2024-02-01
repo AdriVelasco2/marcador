@@ -1012,7 +1012,7 @@
       },
       irAinicio() {
         // Navegar a la nueva página utilizando Vue Router
-        this.$router.push('/inicio');
+        this.$router.push('/');
       }
     },
     mounted() {

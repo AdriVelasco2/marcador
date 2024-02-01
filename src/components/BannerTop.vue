@@ -22,7 +22,7 @@ export default {
       // Inicializa la variable rutaImagen con la ruta de la imagen
       logoWpc: "/5.png",
       iturcemi: "/R.png",
-      marca: "pavel.png",
+      marca: "/pavel.png",
 
     };
   },
