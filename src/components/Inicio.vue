@@ -11,7 +11,7 @@
   
 </template>
 
-<script>
+<script >
 import BannerTop from './BannerTop.vue';
 import BotonEspecial from './BotonEspecial.vue';
 import MarcaAgua from './MarcaAgua.vue';
