@@ -9,7 +9,7 @@ import { registerPlugins } from '@/plugins'
 
 // Components
 import App from './App.vue'
-import { VueGtag } from 'vue-gtag'
+import  VueGtag  from 'vue-gtag'
 
 Vue.config.productionTip = false;
  Vue.use(
