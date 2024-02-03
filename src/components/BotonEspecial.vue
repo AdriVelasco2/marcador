@@ -14,7 +14,7 @@
       class="bg-gradient-to-tr from-yellow-400 to-amber-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-amber-500/80 bounce-in-top size-64 rounded-full "
       @click="irANuevaPagina"
       >
-      <p class="text-2xl text-yellow-200 font-sans font-semibold drop-shadow-lg">3 sets</p>
+      <p class="text-2xl text-yellow-200 font-sans font-semibold drop-shadow-lg">3 sets ORO</p>
 
        
       </button>
@@ -37,7 +37,7 @@
       class="bg-gradient-to-tr from-yellow-400 to-amber-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-amber-500/80 bounce-in-top size-64 rounded-full"
 
       >
-      <p class="text-2xl text-yellow-200 font-sans font-semibold drop-shadow-xl">2 sets Súpertie</p>
+      <p class="text-2xl text-yellow-200 font-sans font-semibold drop-shadow-xl">2 sets Súpertie ORO</p>
 
       </button>
       </div>

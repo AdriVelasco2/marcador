@@ -46,6 +46,7 @@
 <script>
 export default {
 data(){
+  methods: {
     sumarTieBreak1() {
       this.tie1++;
       if (this.tie1 === 6 && this.tie2 <= 5) {
@@ -86,6 +87,7 @@ data(){
         this.tie2 = 0;
       }
     }
+}
 }
 }
 </script>
