@@ -3,7 +3,7 @@
   <h1><banner-top/></h1>
   </div>
   <div class="text-focus-in flex justify-center p-6">
-    <h2 class=" heartbeat border  text text-amber-400 text-8xl">ELIJA TIPO DE PARTIDO</h2>
+    <h2 class=" heartbeat border  text text-amber-400 text-8xl">TOCA PARA ELEGIR PARTIDO<br/>(Soy táctil)</h2>
   </div>
   <div class="">
     <boton-especial/>

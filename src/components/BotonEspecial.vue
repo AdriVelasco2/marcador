@@ -6,7 +6,7 @@
         class="grid place-content-center bg-gradient-to-tr from-lime-400 to-lime-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-lime-500/80 bounce-in-top size-64 rounded-full"
         @click="irANuevaPagina"
       >
-        <p class="text-2xl font-sans font-semibold ">3 sets</p>
+        <p class="text-2xl font-sans font-semibold ">3 sets <br/>(en mantenimiento, no tocar)</p>
       </button>
         </div>
         <div class="grid place-content-center">
@@ -26,7 +26,7 @@
       class=" grid place-content-center bg-gradient-to-tr from-lime-400 to-lime-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-lime-500/80 bounce-in-top size-64 rounded-full"
 
       >
-      <p class="text-2xl font-sans font-semibold">2 sets Súpertie</p>
+      <p class="text-2xl font-sans font-semibold">2 sets Súpertie <br/>(en mantenimiento, no tocar)</p>
 
       </button>
 </div>

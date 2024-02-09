@@ -521,10 +521,10 @@
   <!-- MOSTRAR RESULTADO -->
   <div v-else-if="sets1>=2 || sets2>=2">
     <div>
-      <div>
-        <button class="font-bold text-5xl mt-8 text-white"
+      <div class="place-items-center bg-teal-500 text-center">
+        <button class=" font-bold text-5xl mt-4 mb-4 text-white"
         @click="irAinicio"
-        >Volver a empezar</button>
+        >Toca aquí para volver a empezar</button>
       </div>
       <div class="grid grid-cols-4 p-4 text-white">
         <div class="grid  gap-1">
