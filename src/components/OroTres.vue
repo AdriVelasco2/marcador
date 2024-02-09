@@ -7,23 +7,23 @@
     v-if="verTie2===true && juegos3===6 && juegos4===6"
   >
     <h1
-      class="grid col-start-2 content-center text text-center text-6xl text-white"
+      class="grid col-start-2 row-start-1 content-start text text-center text-6xl text-white"
     >
       Tie Break
     </h1>
-    <div class="grid col-start-1 content-center text-white">
-      <div class="grid grid-cols-1 col-span-1 gap-2">
+    <div class="grid col-start-1 content-end text-white">
+      <div class="grid grid-cols-1 col-span-1 gap-5">
         <h2 class="text text-6xl text-center">{{ jugador11 }}</h2>
         <h2 class="text text-6xl text-center">{{ jugador12 }}</h2>
       </div>
     </div>
     <div
-      class="grid col-start-2 row-start-2 content-center text-center text-white"
+      class="grid col-start-2 row-start-1 content-end text-center text-white"
     >
       <p class="text text-9xl truncate text-center">{{ tie3 }}</p>
     </div>
     <div
-      class="grid col-start-3 gap-2 row-start-2 content-start p-2 text-white"
+      class="grid col-start-3 gap-2 row-start-1 content-end p-2 text-white mt-5"
     >
       <button class="text text-9xl text-center" @click="sumarTieBreak3">
         🔼
@@ -32,18 +32,18 @@
         🔽
       </button>
     </div>
-    <div class="grid grid-cols-1 row-start-3 content-center text-white">
+    <div class="grid grid-cols-1 row-start-2 content-end text-white">
       <div class="grid grid-cols-1 col-span-2 gap-3">
         <h2 class="text text-6xl text-center">{{ jugador21 }}</h2>
         <h2 class="text text-6xl text-center">{{ jugador22 }}</h2>
       </div>
     </div>
     <div
-      class="grid col-start-2 row-start-3 content-center text-center text-white"
+      class="grid col-start-2 row-start-2 content-end text-center text-white"
     >
       <p class="text text-9xl truncate">{{ tie4 }}</p>
     </div>
-    <div class="grid col-start-3 gap-2 row-start-3 content-start text-white">
+    <div class="grid col-start-3 gap-2 row-start-2 content-end  text-white">
       <button class="text text-9xl" @click="sumarTieBreak4">🔼</button>
       <button class="text text-9xl" @click="restarTieBreak4">🔽</button>
     </div>
@@ -56,23 +56,23 @@
     v-if="juegos5 === 6 && juegos6 === 6 && verTie3===true"
   >
     <h1
-      class="grid col-start-2 content-center text text-center text-6xl text-white"
+      class="grid col-start-2 row-start-1 content-start text text-center text-6xl text-white"
     >
       Tie Break
     </h1>
-    <div class="grid col-start-1 content-center text-white">
+    <div class="grid col-start-1 content-end text-white">
       <div class="grid grid-cols-1 col-span-1 gap-2">
         <h2 class="text text-6xl text-center">{{ jugador11 }}</h2>
         <h2 class="text text-6xl text-center">{{ jugador12 }}</h2>
       </div>
     </div>
     <div
-      class="grid col-start-2 row-start-2 content-center text-center text-white"
+      class="grid col-start-2 row-start-1 content-end text-center text-white"
     >
       <p class="text text-9xl truncate text-center">{{ tie5 }}</p>
     </div>
     <div
-      class="grid col-start-3 gap-2 row-start-2 content-start p-2 text-white"
+      class="grid col-start-3 gap-2 row-start-1 content-end p-2 mt-5 text-white"
     >
       <button class="text text-9xl text-center" @click="sumarTieBreak5">
         🔼
@@ -81,18 +81,18 @@
         🔽
       </button>
     </div>
-    <div class="grid grid-cols-1 row-start-3 content-center text-white">
-      <div class="grid grid-cols-1 col-span-2 gap-3">
+    <div class="grid grid-cols-1 row-start-2 content-end text-white">
+      <div class="grid grid-cols-1 col-span-2 gap-5 ">
         <h2 class="text text-6xl text-center">{{ jugador21 }}</h2>
         <h2 class="text text-6xl text-center">{{ jugador22 }}</h2>
       </div>
     </div>
     <div
-      class="grid col-start-2 row-start-3 content-center text-center text-white"
+      class="grid col-start-2 row-start-2 content-end text-center text-white"
     >
       <p class="text text-9xl truncate">{{ tie6 }}</p>
     </div>
-    <div class="grid col-start-3 gap-2 row-start-3 content-start text-white">
+    <div class="grid col-start-3 gap-2 row-start-2 content-end text-white">
       <button class="text text-9xl" @click="sumarTieBreak6">🔼</button>
       <button class="text text-9xl" @click="restarTieBreak6">🔽</button>
     </div>
