@@ -62,7 +62,6 @@
           <h2 class="text text-6xl text-center">{{ jugador12 }}</h2>
         </div>
       </div>
-      
       <div
         class="grid col-start-2 row-start-1 content-between text-center text-white"
       >
@@ -507,6 +506,7 @@
         puntos: [0, 15, 30, 40],
         sets: [0, 1, 2, 3],
         juegos: [0, 1, 2, 3, 4, 5, 6, 7],
+        enAdv: false,
         mostrar: false,
         tercero: false,
         verTie2: false,
@@ -535,29 +535,44 @@
         this.verTie3=false;
       }
     },
-      sumarPuntos1() {
-        this.puntos1 = (this.puntos1 + 1) % this.puntos.length;
-        if (this.puntos1 === 0) {
-          this.juegos1 = (this.juegos1 + 1) % this.juegos.length;
-          this.puntos2 = 0;
-        }
-  
-        if (this.juegos1 >= 5 && this.juegos2 >= 5) {
-          if (
-            (this.juegos1 === 7 || this.juegos2 === 7) &&
-            !(this.juegos1 === 6 && this.juegos2 === 6)
-          ) {
-            this.sets1 = (this.sets1 + 1) % this.sets.length;
-          }
-        } else if (this.juegos1 == 6) {
-          if (this.juegos2 === 6) {
-            this.tie1 = 0;
-            this.tie2 = 0;
-          } else {
-            this.sets1 = (this.sets1 + 1) % this.sets.length;
-          }
-        }
-      },
+    sumarPuntos1() {
+  // Verificar si puntos1 y puntos2 están en 40 (igualdad de 40)
+  if (this.puntos1 === 3 && this.puntos2 === 3) {
+    // Indicar que se ha alcanzado la igualdad en 40 puntos
+    this.enAdv = true;
+  }
+
+  if (this.enAdv) {
+    // Si está en "adv", sumar un punto a juegos1
+    this.juegos1 = (this.juegos1 + 1) % this.juegos.length;
+    // Reiniciar la variable de "adv"
+    this.enAdv = false;
+  } else {
+    // Si no está en "adv", proceder con la lógica existente
+    this.puntos1 = (this.puntos1 + 1) % this.puntos.length;
+  }
+
+  if (this.puntos1 === 0) {
+    this.juegos1 = (this.juegos1 + 1) % this.juegos.length;
+    this.puntos2 = 0;
+  }
+
+  if (this.juegos1 >= 5 && this.juegos2 >= 5) {
+    if (
+      (this.juegos1 === 7 || this.juegos2 === 7) &&
+      !(this.juegos1 === 6 && this.juegos2 === 6)
+    ) {
+      this.sets1 = (this.sets1 + 1) % this.sets.length;
+    }
+  } else if (this.juegos1 == 6) {
+    if (this.juegos2 === 6) {
+      this.tie1 = 0;
+      this.tie2 = 0;
+    } else {
+      this.sets1 = (this.sets1 + 1) % this.sets.length;
+    }
+  }
+},
   
       sumarPuntos2() {
         this.puntos2 = (this.puntos2 + 1) % this.puntos.length;

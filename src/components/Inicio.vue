@@ -1,13 +1,29 @@
 <template>
     <div class="grid content-center">
-  <h1><banner-top/></h1>
+  <banner-top />
+</div>
+
+<div class="grid justify-center gap-4 text-focus-in">
+        <div class="grid gap-4 justify-center">
+        
+        <img :src="marca" class="w-48 h-32" />
   </div>
-  <div class="text-focus-in flex justify-center p-6">
-    <h2 class=" heartbeat border  text text-amber-400 text-8xl">TOCA PARA ELEGIR PARTIDO<br/><div class="text text-white text-3xl">(Soy táctil, funciono perfecto tocando a la vez suavemente con las yemas de dos dedos)</div></h2>
+        <div class="grid justify-center">
+                <h1 class="text-4xl font-bold text-rose-600 text-stroke text-stroke-2 ">Torneo Navidad organizado por:</h1>
+        </div>
+  <!-- Contenedor para las imágenes -->
+  <div class="grid grid-cols-2 justify-center">
+        
+        <img :src="ko" class="w-64 h-64 heartbeat border" />
+    <img :src="principal" class="w-64 h-64 heartbeat border" />
   </div>
-  <div class="">
-    <boton-especial/>
+
+  <!-- Botón especial debajo de las imágenes -->
+  <div class=" justify-center">
+    <boton-especial />
   </div>
+</div>
+
   
 </template>
 
@@ -16,10 +32,27 @@ import BannerTop from './BannerTop.vue';
 import BotonEspecial from './BotonEspecial.vue';
 import MarcaAgua from './MarcaAgua.vue';
 export default {
-  components: { BannerTop, BotonEspecial,MarcaAgua },};
+        data() {
+    return {
+      // Inicializa la variable rutaImagen con la ruta de la imagen
+      principal: "/12.png",
+      ko: "/11.png",
+      marca: "/pavel.png",
+
+    };
+  },
+  components: { BannerTop, BotonEspecial,MarcaAgua },
+  };
 </script>
 
 <style>
+h1 {
+      font-size: 10rem;               /* Tamaño del texto */
+      font-weight: bold;             /* Grosor del texto */
+      color: #dc2626;                /* Color equivalente a text-rose-600 */
+      -webkit-text-stroke: 1px white; /* Borde blanco */
+      text-align: center;            /* Centrar el texto */
+    }
 .text-focus-in {
 	-webkit-animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;
 	        animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) 1s both;

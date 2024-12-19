@@ -1,46 +1,71 @@
 <template>
-    <div
-    class="grid grid-cols-3 grid-rows-3"
-    v-if="juegos1 === 6 && juegos2 === 6"
-  >
-    <h1 class="grid col-start-2 content-center text text-center text-6xl text-white">
-      Tie Break
-    </h1>
-    <div class="grid col-start-1 content-center text-white">
-      <div class="grid grid-cols-1 col-span-1 gap-2">
-        <h2 class="text text-6xl text-center">{{ jugador11 }}</h2>
-        <h2 class="text text-6xl text-center">{{ jugador12 }}</h2>
-      </div>
-    </div>
-    <div
-      class="grid col-start-2 row-start-2 content-center text-center text-white"
-    >
-      <p class="text text-9xl truncate text-center">{{ tie1 }}</p>
-    </div>
-    <div class="grid col-start-3 gap-2 row-start-2 content-start p-2 text-white">
-      <button class="text text-9xl text-center" @click="sumarTieBreak1">
-        🔼
-      </button>
-      <button class="text text-9xl text-center" @click="restarTieBreak1">
-        🔽
-      </button>
-    </div>
-    <div class="grid grid-cols-1 row-start-3 content-center text-white">
-      <div class="grid grid-cols-1 col-span-2 gap-3">
-        <h2 class="text text-6xl text-center">{{ jugador21 }}</h2>
-        <h2 class="text text-6xl text-center">{{ jugador22 }}</h2>
-      </div>
-    </div>
-    <div
-      class="grid col-start-2 row-start-3 content-center text-center text-white"
-    >
-      <p class="text text-9xl truncate">{{ tie2 }}</p>
-    </div>
-    <div class="grid col-start-3 gap-2 row-start-3 content-start text-white">
-      <button class="text text-9xl" @click="sumarTieBreak2">🔼</button>
-      <button class="text text-9xl" @click="sumarTieBreak2">🔽</button>
+  <div
+  class="grid grid-cols-3 grid-rows-3"
+  v-if="juegos1 === 6 && juegos2 === 6"
+>
+  <h1 class="grid col-start-2 content-center text text-center text-6xl text-white">
+    Tie Break
+  </h1>
+
+  <!-- Jugadores equipo 1 -->
+  <div class="grid col-start-1 content-center text-white">
+    <div class="grid grid-cols-1 col-span-1 gap-2">
+      <h2 class="text text-6xl text-center">{{ jugador11 }}</h2>
+      <h2 class="text text-6xl text-center">{{ jugador12 }}</h2>
     </div>
   </div>
+
+  <!-- Puntuación del equipo 1 -->
+  <div
+    class="grid col-start-2 row-start-2 content-center text-center text-white relative"
+  >
+    <p class="text text-9xl truncate text-center relative z-10">{{ tie1 }}</p>
+    <div class="absolute inset-0 flex flex-col">
+      <!-- Botón sumar -->
+      <div
+        class="flex-1 bg-green-500 hover:bg-green-600 cursor-pointer"
+        @click="sumarTieBreak1"
+        title="Sumar puntos"
+      ></div>
+      <!-- Botón restar -->
+      <div
+        class="flex-1 bg-red-500 hover:bg-red-600 cursor-pointer"
+        @click="restarTieBreak1"
+        title="Restar puntos"
+      ></div>
+    </div>
+  </div>
+
+  <!-- Jugadores equipo 2 -->
+  <div class="grid grid-cols-1 row-start-3 content-center text-white">
+    <div class="grid grid-cols-1 col-span-2 gap-3">
+      <h2 class="text text-6xl text-center">{{ jugador21 }}</h2>
+      <h2 class="text text-6xl text-center">{{ jugador22 }}</h2>
+    </div>
+  </div>
+
+  <!-- Puntuación del equipo 2 -->
+  <div
+    class="grid col-start-2 row-start-3 content-center text-center text-white relative"
+  >
+    <p class="text text-9xl truncate relative z-10">{{ tie2 }}</p>
+    <div class="absolute inset-0 flex flex-col">
+      <!-- Botón sumar -->
+      <div
+        class="flex-1 bg-green-500 hover:bg-green-600 cursor-pointer"
+        @click="sumarTieBreak2"
+        title="Sumar puntos"
+      ></div>
+      <!-- Botón restar -->
+      <div
+        class="flex-1 bg-red-500 hover:bg-red-600 cursor-pointer"
+        @click="restarTieBreak2"
+        title="Restar puntos"
+      ></div>
+    </div>
+  </div>
+</div>
+
 </template>
 
 <script>

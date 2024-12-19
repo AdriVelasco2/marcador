@@ -1,46 +1,28 @@
 <template>
-  <div class="mt-5">
-    <div class="grid grid-cols-4 p-4 ">
-        <div class="grid place-content-center">
-        <button
-        class="grid place-content-center bg-gradient-to-tr from-lime-400 to-lime-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-lime-500/80 bounce-in-top size-64 rounded-full"
-        @click="irANuevaPagina"
+  <div class="">
+    <div class="grid grid-cols-2 ">
+        
+        <div class="grid place-content-center p-4">
+            <button
+      class="bg-gradient-to-tr from-black to-white ring-0  drop-shadow-lg shadow-lg shadow-white/80 bounce-in-top size-64 rounded-full "
+      @click="irATres"
       >
-        <p class="text-2xl font-sans font-semibold ">3 sets <br/>(en mantenimiento, no tocar)</p>
+      <p class="text-2xl text-black font-sans font-semibold drop-shadow-lg">Modo 3 sets</p>
       </button>
-        </div>
-        <div class="grid place-content-center">
-      <button
-      class="bg-gradient-to-tr from-yellow-400 to-amber-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-amber-500/80 bounce-in-top size-64 rounded-full "
+      
+      
+</div>
+<div class="grid place-content-center">
+    <button
+      class="bg-gradient-to-tr from-gray-800 to-rose-700 ring-0  drop-shadow-lg shadow-lg shadow-pink-400/80 bounce-in-top size-64 rounded-full "
       @click="irANuevaPagina"
       >
-      <p class="text-2xl text-yellow-200 font-sans font-semibold drop-shadow-lg">3 sets ORO</p>
-
-       
+      <p class="text-2xl text-white font-sans font-semibold drop-shadow-lg">Modo 2 sets</p>
       </button>
+      
 </div>
-<div class="grid place-content-center">
 
-      <button
-      @click="irAOroDos"
-      class=" grid place-content-center bg-gradient-to-tr from-lime-400 to-lime-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-lime-500/80 bounce-in-top size-64 rounded-full"
 
-      >
-      <p class="text-2xl font-sans font-semibold">2 sets Súpertie <br/>(en mantenimiento, no tocar)</p>
-
-      </button>
-</div>
-<div class="grid place-content-center">
-
-      <button
-      @click="irAOroDos"
-      class="bg-gradient-to-tr from-yellow-400 to-amber-700 ring-0 ring-green-600 drop-shadow-lg shadow-lg shadow-amber-500/80 bounce-in-top size-64 rounded-full"
-
-      >
-      <p class="text-2xl text-yellow-200 font-sans font-semibold drop-shadow-xl">2 sets Súpertie ORO</p>
-
-      </button>
-      </div>
     </div>
   </div>
 </template>
@@ -50,14 +32,12 @@ export default {
     methods: {
         irANuevaPagina() {
       // Navegar a la nueva página utilizando Vue Router
+      this.$router.push('/OroDos');
+    },
+    irATres() {
+      // Navegar a la nueva página utilizando Vue Router
       this.$router.push('/OroTres');
     },
-
-    irAOroDos() {
-      // Navegar a la nueva página utilizando Vue Router
-      this.$router.push('/OroDos');
-    }
-    
 },
 }
 </script>
