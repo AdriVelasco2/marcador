@@ -439,12 +439,12 @@
       >
         <div  class="grid content-end gap-1">
           <textarea
-          v-model="jugador11"
+          v-model="jugador21"
           class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
           spellcheck="false"
         ></textarea>
         <textarea
-          v-model="jugador12"
+          v-model="jugador22"
           class="bg-black text-white rounded-md resize-none truncate text text-5xl text-center leading-normal align-baseline h-20"
           spellcheck="false"
         ></textarea>
