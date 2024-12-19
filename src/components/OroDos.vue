@@ -1,6 +1,8 @@
 <template>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  
+    <div v-if="sets1 <2 && sets2<2">
+    <banner-top />
+  </div>
       <!-- TIE BREAK SET 2-->
       <div
     class="grid grid-cols-3 gap-4 grid-rows-3"
@@ -679,7 +681,10 @@
   </template>
   
   <script>
+import BannerTop from "./BannerTop.vue";
+
   export default {
+  components: { BannerTop },
     
   
     data() {
