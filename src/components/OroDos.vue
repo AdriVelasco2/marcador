@@ -3,255 +3,430 @@
   
       <!-- TIE BREAK SET 2-->
       <div
-      class="grid grid-cols-3 grid-rows-3"
-      v-if="verTie2===true && juegos3===6 && juegos4===6"
-    >
+    class="grid grid-cols-3 gap-4 grid-rows-3"
+    v-if="verTie2 === true && juegos3 === 6 && juegos4 === 6"
+  >
+  <div class="grid col-start-2 row-start-1">
       <h1
-        class="grid col-start-2 row-start-1 content-start text text-center text-6xl text-white"
+        class="grid col-start-2 row-start-1  text text-center text-6xl text-white"
       >
-        Tie Break
+        Tie Break set 2
       </h1>
-      <div class="grid col-start-1 content-end text-white">
-        <div class="grid grid-cols-1 col-span-1 gap-5">
-          <h2 class="text text-6xl text-center">{{ jugador11 }}</h2>
-          <h2 class="text text-6xl text-center">{{ jugador12 }}</h2>
-        </div>
-      </div>
-      <div
-        class="grid col-start-2 row-start-1 content-end text-center text-white"
-      >
-        <p class="text text-9xl truncate text-center">{{ tie3 }}</p>
-      </div>
-      <div
-        class="grid col-start-3 gap-2 row-start-1 content-end p-2 text-white mt-5"
-      >
-        <button class="text text-9xl text-center" @click="sumarTieBreak3">
-          🔼
-        </button>
-        <button class="text text-9xl text-center" @click="restarTieBreak3">
-          🔽
-        </button>
-      </div>
-      <div class="grid grid-cols-1 row-start-2 content-end text-white">
-        <div class="grid grid-cols-1 col-span-2 gap-5">
-          <h2 class="text text-6xl text-center">{{ jugador21 }}</h2>
-          <h2 class="text text-6xl text-center">{{ jugador22 }}</h2>
-        </div>
-      </div>
-      <div
-        class="grid col-start-2 row-start-2 content-end text-center text-white"
-      >
-        <p class="text text-9xl truncate">{{ tie4 }}</p>
-      </div>
-      <div class="grid col-start-3 gap-2 row-start-2 content-end text-white">
-        <button class="text text-9xl" @click="sumarTieBreak4">🔼</button>
-        <button class="text text-9xl" @click="restarTieBreak4">🔽</button>
+    </div>
+    <div class="grid col-start-1 row-start-2 content-end text-white">
+      <div class="grid grid-cols-1 col-span-1 gap-2">
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador11 }}
+        </h2>
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador12 }}
+        </h2>
       </div>
     </div>
+    <div class="grid col-start-2 row-start-2 text-center text-white">
+      <h2 class="text text-9xl truncate text-center relative">
+        <!-- Número visible -->
+        <span class="relative z-10 text-white">
+          {{ tie3 }}
+        </span>
+
+        <!-- Fondos superpuestos para sumar y restar -->
+        <div class="absolute inset-0 flex flex-col">
+          <!-- Fondo verde para sumar -->
+          <div
+            class="flex-1 bg-rose-900"
+            @click="sumarTieBreak3"
+            title="Sumar puntos"
+          ></div>
+
+          <!-- Fondo rojo para restar -->
+          <div
+            class="flex-1 bg-rose-800"
+            @click="restarTieBreak3"
+            title="Restar puntos"
+          ></div>
+        </div>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 row-start-3 content-center text-white">
+      <div class="grid grid-cols-1 col-span-2 gap-3">
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador21 }}
+        </h2>
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador22 }}
+        </h2>
+      </div>
+    </div>
+    <div class="grid col-start-2 row-start-3 text-center text-white">
+      <h2 class="text text-9xl truncate relative">
+        <!-- Número visible -->
+        <span class="relative z-10 text-white">
+          {{ tie4 }}
+        </span>
+
+        <!-- Fondos superpuestos para sumar y restar -->
+        <div class="absolute inset-0 flex flex-col">
+          <!-- Fondo verde para sumar -->
+          <div
+            class="flex-1 bg-rose-900"
+            @click="sumarTieBreak4"
+            title="Sumar puntos"
+          ></div>
+
+          <!-- Fondo rojo para restar -->
+          <div
+            class="flex-1 bg-rose-800"
+            @click="restarTieBreak4"
+            title="Restar puntos"
+          ></div>
+        </div>
+      </h2>
+    </div>
+  </div>
     <!-- FIN TIE BREAK SET 2-->
   
       <!-- SÚPER TIE-->
       <div
-      class="grid grid-cols-3 grid-rows-3"
+      class="grid grid-cols-3 gap-4 grid-rows-3"
       v-if="sets1=== 1 && sets2 === 1"
     >
       
-      <div class="grid col-start-1 content-end text-white">
-        <div class="grid grid-cols-1 col-span-1 gap-2">
-          <h2 class="text text-6xl text-center">{{ jugador11 }}</h2>
-          <h2 class="text text-6xl text-center">{{ jugador12 }}</h2>
+    <div class="grid col-start-2 gap-4 row-start-1">
+      <h1
+        class="grid col-start-2 row-start-1 content-start text text-start text-6xl text-white"
+      >
+        Súper Tie
+      </h1>
+    </div>
+    <div class="grid col-start-1 row-start-2 content-end text-white">
+      <div class="grid grid-cols-1 col-span-1 gap-2">
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador11 }}
+        </h2>
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador12 }}
+        </h2>
+      </div>
+    </div>
+    <div class="grid col-start-2 row-start-2 text-center text-white">
+      <h2 class="text text-9xl truncate text-center relative">
+        <!-- Número visible -->
+        <span class="relative z-10 text-white">
+          {{ tie5 }}
+        </span>
+
+        <!-- Fondos superpuestos para sumar y restar -->
+        <div class="absolute inset-0 flex flex-col">
+          <!-- Fondo verde para sumar -->
+          <div
+            class="flex-1 bg-rose-900"
+            @click="sumarTieBreak5"
+            title="Sumar puntos"
+          ></div>
+
+          <!-- Fondo rojo para restar -->
+          <div
+            class="flex-1 bg-rose-800"
+            @click="restarTieBreak5"
+            title="Restar puntos"
+          ></div>
         </div>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 row-start-3 content-center text-white">
+      <div class="grid grid-cols-1 col-span-2 gap-3">
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador21 }}
+        </h2>
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador22 }}
+        </h2>
       </div>
-      
-      <div
-        class="grid col-start-2 row-start-1 content-between text-center text-white"
-      >
-        <h1 class="text text-center text-6xl ">Súper Tie</h1>
-        <p class="text text-9xl truncate text-center">{{ tie5 }}</p>
-      </div>
-      <div
-        class="grid col-start-3 gap-2 row-start-1 content-end p-2 text-white"
-      >
-        <button class="text text-9xl text-center" @click="sumarTieBreak5">
-          🔼
-        </button>
-        <button class="text text-9xl text-center" @click="restarTieBreak5">
-          🔽
-        </button>
-      </div>
-      <div class="grid grid-cols-1 row-start-2 content-end text-white">
-        <div class="grid grid-cols-1 col-span-2 gap-3">
-          <h2 class="text text-6xl text-center">{{ jugador21 }}</h2>
-          <h2 class="text text-6xl text-center">{{ jugador22 }}</h2>
+    </div>
+    <div class="grid col-start-2 row-start-3 text-center text-white">
+      <h2 class="text text-9xl truncate relative">
+        <!-- Número visible -->
+        <span class="relative z-10 text-white">
+          {{ tie6 }}
+        </span>
+
+        <!-- Fondos superpuestos para sumar y restar -->
+        <div class="absolute inset-0 flex flex-col">
+          <!-- Fondo verde para sumar -->
+          <div
+            class="flex-1 bg-rose-900"
+            @click="sumarTieBreak6"
+            title="Sumar puntos"
+          ></div>
+
+          <!-- Fondo rojo para restar -->
+          <div
+            class="flex-1 bg-rose-800"
+            @click="restarTieBreak2"
+            title="Restar puntos"
+          ></div>
         </div>
-      </div>
-      <div
-        class="grid col-start-2 row-start-2 content-end text-center text-white"
-      >
-        <p class="text text-9xl truncate">{{ tie6 }}</p>
-      </div>
-      <div class="grid col-start-3 gap-2 row-start-2 content-end text-white">
-        <button class="text text-9xl" @click="sumarTieBreak6">🔼</button>
-        <button class="text text-9xl" @click="restarTieBreak6">🔽</button>
-      </div>
+      </h2>
+    </div>
     </div>
     <!-- FIN TIE BREAK 3-->
   
   
     <!-- SET 1 -->
      <!-- TIE BREAK SET 1-->
-     <div
-     class="grid grid-cols-3 grid-rows-3"
-     v-if="juegos1 === 6 && juegos2 === 6"
-   >
-     <h1
-       class="grid col-start-2 row-start-1 content-start text text-center text-6xl text-white"
-     >
-       Tie Break
-     </h1>
-     <div class="grid col-start-1 row-start-1 content-end text-white">
-       <div class="grid grid-cols-1 col-span-1 gap-2">
-         <h2 class="text text-6xl text-center">{{ jugador11 }}</h2>
-         <h2 class="text text-6xl text-center">{{ jugador12 }}</h2>
-       </div>
-     </div>
-     <div
-       class="grid col-start-2 row-start-1 content-end text-center text-white"
-     >
-       <p class="text text-9xl truncate text-center">{{ tie1 }}</p>
-     </div>
-     <div
-       class="grid col-start-3 gap-2 row-start-1 content-end mt-5 p-2 text-white"
-     >
-       <button class="text text-9xl text-center" @click="sumarTieBreak1">
-         🔼
-       </button>
-       <button class="text text-9xl text-center" @click="restarTieBreak1">
-         🔽
-       </button>
-     </div>
-     <div class="grid grid-cols-1 row-start-2 content-end text-white">
-       <div class="grid grid-cols-1 col-span-2 gap-3">
-         <h2 class="text text-6xl text-center">{{ jugador21 }}</h2>
-         <h2 class="text text-6xl text-center">{{ jugador22 }}</h2>
-       </div>
-     </div>
-     <div
-       class="grid col-start-2 row-start-2 content-end text-center text-white"
-     >
-       <p class="text text-9xl truncate">{{ tie2 }}</p>
-     </div>
-     <div class="grid col-start-3 gap-2 row-start-2 content-end text-white">
-       <button class="text text-9xl" @click="sumarTieBreak2">🔼</button>
-       <button class="text text-9xl" @click="restarTieBreak2">🔽</button>
-     </div>
-   </div>
+    <div
+    class="grid grid-cols-3 gap-4 grid-rows-3"
+    v-if="juegos1 === 6 && juegos2 === 6"
+  >
+    <div class="grid col-start-2 row-start-1">
+      <h1
+        class="grid col-start-2 row-start-1 content-start text text-center text-6xl text-white"
+      >
+        Tie Break set 1
+      </h1>
+    </div>
+    <div class="grid col-start-1 row-start-2 content-end text-white">
+      <div class="grid grid-cols-1 col-span-1 gap-2">
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador11 }}
+        </h2>
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador12 }}
+        </h2>
+      </div>
+    </div>
+    <div class="grid col-start-2 row-start-2 text-center text-white">
+      <h2 class="text text-9xl truncate text-center relative">
+        <!-- Número visible -->
+        <span class="relative z-10 text-white">
+          {{ tie1 }}
+        </span>
+
+        <!-- Fondos superpuestos para sumar y restar -->
+        <div class="absolute inset-0 flex flex-col">
+          <!-- Fondo verde para sumar -->
+          <div
+            class="flex-1 bg-rose-900"
+            @click="sumarTieBreak1"
+            title="Sumar puntos"
+          ></div>
+
+          <!-- Fondo rojo para restar -->
+          <div
+            class="flex-1 bg-rose-800"
+            @click="restarTieBreak1"
+            title="Restar puntos"
+          ></div>
+        </div>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 row-start-3 content-center text-white">
+      <div class="grid grid-cols-1 col-span-2 gap-3">
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador21 }}
+        </h2>
+        <h2
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+        >
+          {{ jugador22 }}
+        </h2>
+      </div>
+    </div>
+    <div class="grid col-start-2 row-start-3 text-center text-white">
+      <h2 class="text text-9xl truncate relative">
+        <!-- Número visible -->
+        <span class="relative z-10 text-white">
+          {{ tie2 }}
+        </span>
+
+        <!-- Fondos superpuestos para sumar y restar -->
+        <div class="absolute inset-0 flex flex-col">
+          <!-- Fondo verde para sumar -->
+          <div
+            class="flex-1 bg-rose-900"
+            @click="sumarTieBreak2"
+            title="Sumar puntos"
+          ></div>
+
+          <!-- Fondo rojo para restar -->
+          <div
+            class="flex-1 bg-rose-800"
+            @click="restarTieBreak2"
+            title="Restar puntos"
+          ></div>
+        </div>
+      </h2>
+    </div>
+  </div>
    <!-- FIN TIE BREAK SET 1-->
     <div v-else-if="tercero===false && verTie2===false " >
       <div 
       v-if="sets1!=2 && sets2!=2"
-        class="grid grid-cols-4 p-4 text-white"
+        class="grid grid-cols-4  mb-4 text-white"
       >
         <div class="grid content-end gap-1">
           <textarea
-            v-model="jugador11"
-            class="bg-black text-white rounded-md resize-none truncate text text-5xl"
-            spellcheck="false"
-          >
-          </textarea>
-          <textarea
-            v-model="jugador12"
-            class="bg-black text-white rounded-md resize-none truncate text text-5xl"
-            spellcheck="false"
-            maxlength=""
-          >
-          </textarea>
+          v-model="jugador11"
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+          spellcheck="false"
+        ></textarea>
+        <textarea
+          v-model="jugador12"
+          class="bg-black text-white rounded-md resize-none truncate text text-5xl text-center leading-normal align-baseline h-20"
+          spellcheck="false"
+        ></textarea>
         </div>
-        <div class="grid grid-cols-2">
-          <h1
-            class="text text-4xl p-2 col-span-2 grid content-center justify-start"
-          >
-            SET 1
-          </h1>
-          <h2
-            class="text text-9xl p-2 col-span-1 grid content-center justify-center"
-          >
+        <div class="grid">
+        <h1
+          class="text text-4xl p-2 col-span-2 grid content-center justify-center"
+        >
+          SET 1
+        </h1>
+        <h2
+          class="text text-9xl p-2 col-span-2 grid content-center justify-center relative"
+        >
+          <!-- Número visible -->
+          <span class="relative z-10 text-white">
             {{ juegos[juegos1] }}
-          </h2>
-          <div v-if="sets1 === 0 && sets2 === 0" class="grid justify-items-start gap-6">
-            <button class="text text-9xl" @click="sumarJuegos1">🔼</button>
-            <button class="text text-9xl" @click="restarJuegos1">🔽</button>
+          </span>
+          <!-- Botones superpuestos -->
+          <div class="absolute inset-0 flex flex-col">
+            <!-- Botón para sumar -->
+            <div
+              class="flex-1 bg-rose-900"
+              @click="sumarJuegos1"
+              title="Sumar puntos"
+            ></div>
+            <!-- Botón para restar -->
+            <div
+              class="flex-1 bg-rose-800"
+              @click="restarJuegos1"
+              title="Restar puntos"
+            ></div>
           </div>
-        </div>
+        </h2>
+      </div>
   
         <!-- SET 2 APARECE -->
-        <div v-if="sets1 === 1 || sets2 === 1" class="grid grid-cols-2">
+        <div v-if="sets1 === 1 || sets2 === 1" class="grid ">
           <h1 class="text text-4xl p-2 col-span-2 grid content-center">SET 2</h1>
-          <h2
-            class="text text-9xl p-2 col-span-1 grid content-center justify-center"
-          >
+            <h2
+          class="text text-9xl p-2 border-l-4 col-span-2 grid content-center justify-center relative"
+        >
+          <!-- Número visible -->
+          <span class="relative z-10 text-white">
             {{ juegos[juegos3] }}
-          </h2>
-          <div v-if="sets1 >= 1 || sets2 >= 1" class="grid justify-items-start gap-6">
-            <button
-              class="text text-9xl grid content-start"
+          </span>
+          <!-- Botones superpuestos -->
+          <div class="absolute inset-0 flex flex-col">
+            <!-- Botón para sumar -->
+            <div
+              class="flex-1 bg-rose-900"
               @click="sumarJuegos3(); mostrarSet3(); mostrarTie2();"
-            >
-              🔼
-            </button>
-            <button
-              class="text text-9xl grid content-start"
-              @click="restarJuegos3(); mostrarTie2();"
-            >
-              🔽
-            </button>
+              title="Sumar puntos"
+            ></div>
+            <!-- Botón para restar -->
+            <div
+              class="flex-1 bg-rose-800"
+             @click="restarJuegos3(); mostrarTie2();"
+              title="Restar puntos"
+            ></div>
           </div>
+        </h2>
         </div>
      
-        <div v-if="sets1 === 0 && sets2 === 0" class="grid grid-cols-2">
-          <h1 class="text text-4xl p-2 col-span-2 grid content-center">PUNTOS</h1>
-          <h2 class="text text-9xl col-span-1 grid content-center justify-center"
-          :class="{ 'oro':puntos[puntos1] === 40 && puntos[puntos2] === 40 }"
-          >
-            {{ puntos[puntos1] }}
-          </h2>
-          <div v-if="sets1 <= 1 && sets2 <= 1" class="grid justify-items-start gap-6">
-            <button
-              class="text text-9xl grid content-start"
-              @click="sumarPuntos1()"
-            >
-              🔼
-            </button>
-            <button
-              class="text text-9xl grid content-start"
-              @click="restarPuntos1"
-            >
-              🔽
-            </button>
-          </div>
-        </div>
-        <div v-else-if="sets1 === 1 || sets2 === 1" class="grid grid-cols-2">
-          <h1 class="text text-4xl p-2 col-span-2 grid content-center">PUNTOS</h1>
-          <h2 class="text text-9xl col-span-1 grid content-center justify-center"
-          :class="{ 'oro':puntos[puntos3] === 40 && puntos[puntos4] === 40 }"
-          >
-            {{ puntos[puntos3] }}
-          </h2>
-          <div v-if="sets1 <= 1 && sets2 <= 1" class="grid justify-items-start gap-6">
-            <button
-              class="text text-9xl grid content-start"
-              @click="sumarPuntos3();  mostrarSet3(); mostrarTie2();"
-            >
-              🔼
-            </button>
-            <button
-              class="text text-9xl grid content-start"
-              @click="restarPuntos3(); mostrarTie2();"
-            >
-              🔽
-            </button>
-          </div>
-        </div>
+        <div v-if="sets1 === 0 && sets2 === 0" class="grid">
+  <!-- Encabezado -->
+  <h1 class="text text-4xl  grid content-center">PUNTOS</h1>
+
+  <!-- Marcador de puntos -->
+  <h2
+    class="text text-9xl col-span-1 border-l-4 grid content-center justify-center relative"
+    :class="{ 'oro': puntos[puntos1] === 40 && puntos[puntos2] === 40 }"
+  >
+    <!-- Número visible -->
+    <span class="relative z-10 text-white">
+      {{ puntos[puntos1] }}
+    </span>
+
+    <!-- Fondos superpuestos para sumar y restar -->
+    <div class="absolute inset-0 flex flex-col">
+      <!-- Fondo verde para sumar -->
+      <div
+      class="flex-1 bg-rose-900"
+      @click="sumarPuntos1"
+        title="Sumar puntos"
+      ></div>
+
+      <!-- Fondo rojo para restar -->
+      <div
+      class="flex-1 bg-rose-800"
+      @click="restarPuntos1"
+        title="Restar puntos"
+      ></div>
+    </div>
+  </h2>
+</div>
+
+<div v-else-if="sets1 === 1 || sets2 === 1" class="grid">
+  <!-- Encabezado -->
+  <h1 class="text text-4xl  grid content-center">PUNTOS</h1>
+
+  <!-- Marcador de puntos -->
+  <h2
+    class="text text-9xl col-span-1 border-l-4 grid content-center justify-center relative"
+    :class="{ 'oro': puntos[puntos3] === 40 && puntos[puntos4] === 40 }"
+  >
+    <!-- Número visible -->
+    <span class="relative z-10 text-white">
+      {{ puntos[puntos3] }}
+    </span>
+
+    <!-- Fondos superpuestos para sumar y restar -->
+    <div class="absolute inset-0 flex flex-col">
+      <!-- Fondo verde para sumar -->
+      <div
+      class="flex-1 bg-rose-900"
+      @click="sumarPuntos3(); mostrarSet3(); mostrarTie2();"
+        title="Sumar puntos"
+      ></div>
+
+      <!-- Fondo rojo para restar -->
+      <div
+      class="flex-1 bg-rose-800"
+      @click="restarPuntos3(); mostrarTie2();"
+        title="Restar puntos"
+      ></div>
+    </div>
+  </h2>
+</div>
+
       </div>
     
       <!-- COLUMNA DE ABAJO -->
@@ -262,97 +437,140 @@
       >
         <div  class="grid content-end gap-1">
           <textarea
-            v-model="jugador21"
-            class="bg-black text-white p-2 rounded-md w-auto resize-none truncate text text-5xl col-span-2"
-            spellcheck="false"
-          ></textarea>
-          <textarea
-            v-model="jugador22"
-            class="bg-black text-white p-2 rounded-md w-auto resize-none truncate text text-5xl col-span-2"
-            spellcheck="false"
-          ></textarea>
+          v-model="jugador11"
+          class="bg-black text-white justify-center rounded-md resize-none truncate text text-5xl text-center leading-normal h-20"
+          spellcheck="false"
+        ></textarea>
+        <textarea
+          v-model="jugador12"
+          class="bg-black text-white rounded-md resize-none truncate text text-5xl text-center leading-normal align-baseline h-20"
+          spellcheck="false"
+        ></textarea>
         </div>
-        <div class="grid grid-cols-2">
-          <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
-          <h2
-            class="text text-9xl p-2 col-span-1 grid content-center justify-center"
-          >
-            {{ juegos[juegos2] }}
-          </h2>
-          <div v-if="sets1 === 0 && sets2 === 0" class="grid justify-items-start gap-6">
-            <button class="text text-9xl grid  content-start " @click="sumarJuegos2()">
-              🔼
-            </button>
-            <button class="text text-9xl" @click="restarJuegos2()">
-              🔽
-            </button>
-          </div>
+        <div class="grid">
+  <!-- Título (vacío en este caso) -->
+  <h1 class="text text-4xl grid content-center"></h1>
+
+  <!-- Marcador de juegos -->
+  <h2
+    class="text text-9xl col-span-1 grid  content-center justify-center relative"
+    :class="{ 'oro': puntos[puntos3] === 40 && puntos[puntos4] === 40 }"
+  >
+    <!-- Número visible -->
+    <span class="relative z-10 text-white">
+      {{ juegos[juegos2] }}
+    </span>
+
+    <!-- Fondos superpuestos para sumar y restar -->
+    <div class="absolute inset-0 flex flex-col">
+      <!-- Fondo verde para sumar -->
+      <div
+      class="flex-1 bg-rose-900"
+        @click="sumarJuegos2()"
+        title="Sumar juegos"
+      ></div>
+
+      <!-- Fondo rojo para restar -->
+      <div
+      class="flex-1 bg-rose-800"
+        @click="restarJuegos2()"
+        title="Restar juegos"
+      ></div>
+    </div>
+  </h2>
+</div>
+
+<div v-if="sets2 >= 1 || sets1 >= 1" class="grid ">
+  <!-- Título vacío -->
+  <h1 class="text text-4xl  grid content-center"></h1>
+
+  <!-- Marcador de juegos -->
+  <h2 class="text text-9xl grid content-center justify-center relative border-l-4">
+    <!-- Número visible -->
+    <span class="relative z-10 text-white">
+      {{ juegos[juegos4] }}
+    </span>
+
+    <!-- Fondos superpuestos para sumar y restar -->
+    <div class="absolute inset-0 flex flex-col">
+      <!-- Fondo verde para sumar -->
+      <div
+      class="flex-1 bg-rose-900"
+        @click="sumarJuegos4(); mostrarSet3(); mostrarTie2();"
+        title="Sumar juegos"
+      ></div>
+
+      <!-- Fondo rojo para restar -->
+      <div
+      class="flex-1 bg-rose-800"
+        @click="restarJuegos4(); mostrarTie2();"
+        title="Restar juegos"
+      ></div>
+    </div>
+  </h2>
+</div>
+
+        <div v-if="sets1 === 0 && sets2 === 0" class="grid">
+          <h1 class="text text-4xl  grid content-center"></h1>
+
+<!-- Marcador de puntos -->
+<h2
+  class="text text-9xl col-span-1 grid content-center justify-center relative border-l-4"
+  :class="{ 'oro': puntos[puntos1] === 40 && puntos[puntos2] === 40 }"
+>
+  <!-- Número visible -->
+  <span class="relative z-10 text-white">
+    {{ puntos[puntos2] }}
+  </span>
+
+  <!-- Fondos superpuestos para sumar y restar -->
+  <div class="absolute inset-0 flex flex-col">
+    <!-- Fondo verde para sumar -->
+    <div
+    class="flex-1 bg-rose-900"
+    @click="sumarPuntos2"
+      title="Sumar puntos"
+    ></div>
+
+    <!-- Fondo rojo para restar -->
+    <div
+    class="flex-1 bg-rose-800"
+    @click="restarPuntos2"
+      title="Restar puntos"
+    ></div>
+  </div>
+</h2>
         </div>
-        <div v-if="sets2 >= 1 || sets1 >= 1" class="grid grid-cols-2">
-          <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
-          <h2
-            class="text text-9xl p-2 col-span-1 grid content-center justify-center"
-          >
-            {{ juegos[juegos4] }}
-          </h2>
-          <div class="grid justify-items-start gap-6">
-            <button
-              class="text text-9xl grid content-start"
-              @click="sumarJuegos4(); mostrarSet3(); mostrarTie2();"
-            >
-              🔼
-            </button>
-            <button
-              class="text text-9xl grid content-start"
-              @click="restarJuegos4();mostrarTie2();"
-            >
-              🔽
-            </button>
-          </div>
-        </div>
-        <div v-if="sets1 === 0 && sets2 === 0" class="grid grid-cols-2">
-          <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
-          <h2 class="text text-9xl col-span-1 grid content-center justify-center"
-          :class="{ 'oro':puntos[puntos1] === 40 && puntos[puntos2] === 40 }"
-          >
-            {{ puntos[puntos2] }}
-          </h2>
-          <div v-if="sets1 <= 1 && sets2 <= 1" class="grid justify-items-start gap-6">
-            <button
-              class="text text-9xl grid content-start"
-              @click="sumarPuntos2()"
-            >
-              🔼
-            </button>
-            <button
-              class="text text-9xl grid content-start"
-              @click="restarPuntos2()"
-            >
-              🔽
-            </button>
-          </div>
-        </div>
-        <div v-if="sets1 === 1 || sets2 === 1" class="grid grid-cols-2">
-          <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
-          <h2 class="text text-9xl col-span-1 grid content-center justify-center"
-          :class="{ 'oro':puntos[puntos3] === 40 && puntos[puntos4] === 40 }"
-          >
-            {{ puntos[puntos4] }}
-          </h2>
-          <div v-if="sets1 <= 1 && sets2 <= 1" class="grid justify-items-start gap-6">
-            <button
-              class="text text-9xl grid content-start"
-              @click="sumarPuntos4(); mostrarSet3(); mostrarTie2();"
-            >
-              🔼
-            </button>
-            <button
-              class="text text-9xl grid content-start"
-              @click="restarPuntos4(); mostrarTie2();"
-            >
-              🔽
-            </button>
-          </div>
+        <div v-if="sets1 === 1 || sets2 === 1" class="grid ">
+            <h1 class="text text-4xl  grid content-center"></h1>
+
+  <!-- Marcador de puntos -->
+  <h2
+    class="text text-9xl  grid content-center justify-center relative border-l-4"
+    :class="{ 'oro': puntos[puntos1] === 40 && puntos[puntos2] === 40 }"
+  >
+    <!-- Número visible -->
+    <span class="relative z-10 text-white">
+      {{ puntos[puntos4] }}
+    </span>
+
+    <!-- Fondos superpuestos para sumar y restar -->
+    <div class="absolute inset-0 flex flex-col">
+      <!-- Fondo verde para sumar -->
+      <div
+      class="flex-1 bg-rose-900"
+      @click="sumarPuntos4(); mostrarSet3(); mostrarTie2();"
+        title="Sumar puntos"
+      ></div>
+
+      <!-- Fondo rojo para restar -->
+      <div
+      class="flex-1 bg-rose-800"
+      @click="sumarPuntos4(); mostrarTie2();"
+        title="Restar puntos"
+      ></div>
+    </div>
+  </h2>
         </div>
       </div>
     </div>
@@ -362,114 +580,101 @@
   
     <!-- MOSTRAR RESULTADO -->
     <div v-if="sets1===2 || sets2===2">
-      <div>
-        <div>
-          <button class="font-bold text-5xl mt-8 text-white"
+      <div class="bg-rose-800">
+      <div class="place-items-center bg-rose-800 text-center">
+        <button
+          class=" mt-4 text-white"
           @click="irAinicio"
-          >Volver a empezar</button>
-        </div>
-        <div class="grid grid-cols-4 p-4 text-white">
-          <div class="grid  gap-1">
-            <div
-              
-              class="bg-black text-white resize-none self-end truncate text text-5xl"
-              spellcheck="false"
-            > {{ jugador11 }}
-            </div>
-            <div
-               
-              class="bg-black text-white self-center resize-none truncate text text-5xl"
-              spellcheck="false"
-              maxlength=""
-            >
+        ><img :src="marca" class="h-32 w-48" /></button>
+      </div>
+      <div class="grid grid-cols-4 p-4 text-white">
+        <div class="grid gap-1">
+          <div
+          class=" text-white self-end justify-center rounded-md resize-none truncate text text-5xl leading-normal h-20"
+          >
+            {{ jugador11 }}
+          </div>
+          <div
+          class=" text-white justify-center rounded-md resize-none truncate text text-5xl leading-normal h-20"
+          >
             {{ jugador12 }}
-            </div>
-          </div>
-          <div class="grid grid-cols-1">
-            <h1
-              class="text text-4xl p-2 col-span-2 grid content-center justify-start"
-            >
-              SET 1
-            </h1>
-            <h2
-              class="num-resultado p-2 col-span-1 grid justify-start"
-            >
-              {{ juegos[juegos1] }}
-            </h2>
-          </div>
-          <div class="grid grid-cols-1">
-            <h1 class="text text-4xl p-2 col-span-2 grid place-content-start">
-              SET 2
-            </h1>
-            <h2
-              class="num-resultado p-2 col-span-1 grid place-content-start"
-            >
-              {{ juegos[juegos3] }}
-            </h2>
-          </div>
-    
-          <div v-if="tercero===true" class="grid grid-cols-1">
-            <h1 class="text text-4xl p-2 col-span-2 grid place-content-start">
-              Súpertie
-            </h1>
-            <h2 class="num-resultado col-span-1 grid place-content-start ">
-              {{ tie5 }}
-            </h2>
-            
-          </div>
-          <div v-if="sets1 === 1 && sets2 === 1" class="grid grid-cols-2">
-            <h1 class="text text-4xl p-2 col-span-2 grid content-center">PUNTOS</h1>
-            <h2 class="text text-9xl col-span-1 grid content-center justify-center">
-              {{ puntos[puntos5] }}
-            </h2>
-            
           </div>
         </div>
-    
-        <!-- COLUMNA ABAJO SET 3 -->
-        <div class="grid grid-cols-4 p-4 border-t-2 text-white">
-          <div class="grid gap-1">
-            <div
-             
-              class="bg-black text-white self-end resize-none truncate text text-5xl"
-              spellcheck="false"
-            >
-            {{ jugador21 }}
-          </div>
-            <div
-             
-              class="bg-black text-white self-center resize-none truncate text text-5xl"
-              spellcheck="false"
-            > {{ jugador22 }}</div>
-          </div>
-          <div class="grid grid-cols-2">
-            <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
-            <h2
-            class="num-resultado p-2 col-span-1 grid place-content-start"
-            
-            >
-              {{ juegos[juegos2] }}
-            </h2>
-          </div>
-          <div v-if="sets2 >= 1 || sets1 >= 1" class="grid grid-cols-2">
-            <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
-            <h2
-            class="num-resultado p-2 col-span-1 grid place-content-start"
-            >
-              {{ juegos4 }}
-            </h2>
-          </div>
-          <div v-if="tercero===true" class="grid grid-cols-2">
-            <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
-            <h2 class="num-resultado p-2 col-span-1 grid place-content-start"
-            >
-              {{ tie6 }}
-            </h2>
-           
-          </div>
-          
+        <div class="grid grid-cols-1">
+          <h1
+            class="text text-4xl p-2 col-span-2 grid content-center justify-start"
+          >
+            SET 1
+          </h1>
+          <h2 class="num-resultado p-2 col-span-1 grid justify-start">
+            {{ juegos[juegos1] }}
+          </h2>
+        </div>
+        <div class="grid grid-cols-1">
+          <h1 class="text text-4xl p-2 col-span-2 grid place-content-start">
+            SET 2
+          </h1>
+          <h2 class="num-resultado p-2 col-span-1 grid place-content-start">
+            {{ juegos[juegos3] }}
+          </h2>
+        </div>
+
+        <div v-if="tercero === true" class="grid grid-cols-1">
+          <h1 class="text text-4xl p-2 col-span-2 grid place-content-start">
+            SúperTie
+          </h1>
+          <h2 class="num-resultado col-span-1 grid place-content-start">
+            {{ tie5 }}
+          </h2>
+        </div>
+        <div v-if="sets1 === 1 && sets2 === 1" class="grid grid-cols-2">
+          <h1 class="text text-4xl p-2 col-span-2 grid content-center">
+            PUNTOS
+          </h1>
+          <h2
+            class="text text-9xl col-span-1 grid content-center justify-center"
+          >
+            {{ puntos[puntos5] }}
+          </h2>
         </div>
       </div>
+
+      <!-- COLUMNA ABAJO SET 3 -->
+      <div class="grid grid-cols-4 p-4 border-t-2 text-white">
+        <div class="grid gap-1">
+          <div
+            class=" text-white self-end justify-center rounded-md resize-none truncate text text-5xl leading-normal h-20"
+            spellcheck="false"
+          >
+            {{ jugador21 }}
+          </div>
+          <div
+            class=" text-white justify-center rounded-md resize-none truncate text text-5xl leading-normal h-20"
+            spellcheck="false"
+          >
+            {{ jugador22 }}
+          </div>
+        </div>
+        <div class="grid grid-cols-2">
+          <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
+          <h2 class="num-resultado p-2 col-span-1 grid place-content-start">
+            {{ juegos[juegos2] }}
+          </h2>
+        </div>
+        <div v-if="sets2 >= 1 || sets1 >= 1" class="grid grid-cols-2">
+          <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
+          <h2 class="num-resultado p-2 col-span-1 grid place-content-start">
+            {{ juegos[juegos4] }}
+          </h2>
+        </div>
+        <div v-if="tercero === true" class="grid grid-cols-2">
+          <h1 class="text text-4xl p-2 col-span-2 grid content-center"></h1>
+          <h2 class="num-resultado p-2 col-span-1 grid place-content-start">
+            {{ tie6 }}
+          </h2>
+        </div>
+      </div>
+    </div>
     </div>
   </template>
   
@@ -479,6 +684,7 @@
   
     data() {
       return {
+      marca: "/pavel.png",
         jugador11: "Jugador 1",
         jugador12: "Jugador 2",
         jugador21: "Jugador 3",

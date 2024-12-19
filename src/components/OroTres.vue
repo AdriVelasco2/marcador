@@ -3,7 +3,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
   />
-  <div v-if="mostrar === false">
+  <div v-if="sets1 <2 && sets2<2">
     <banner-top />
   </div>
 
@@ -131,7 +131,7 @@
       <h2 class="text text-9xl truncate text-center relative">
         <!-- Número visible -->
         <span class="relative z-10 text-white">
-          {{ tie1 }}
+          {{ tie5 }}
         </span>
 
         <!-- Fondos superpuestos para sumar y restar -->
@@ -139,14 +139,14 @@
           <!-- Fondo verde para sumar -->
           <div
             class="flex-1 bg-rose-900"
-            @click="sumarTieBreak1"
+            @click="sumarTieBreak5"
             title="Sumar puntos"
           ></div>
 
           <!-- Fondo rojo para restar -->
           <div
             class="flex-1 bg-rose-800"
-            @click="restarTieBreak1"
+            @click="restarTieBreak5"
             title="Restar puntos"
           ></div>
         </div>
@@ -171,7 +171,7 @@
       <h2 class="text text-9xl truncate relative">
         <!-- Número visible -->
         <span class="relative z-10 text-white">
-          {{ tie2 }}
+          {{ tie6 }}
         </span>
 
         <!-- Fondos superpuestos para sumar y restar -->
@@ -179,7 +179,7 @@
           <!-- Fondo verde para sumar -->
           <div
             class="flex-1 bg-rose-900"
-            @click="sumarTieBreak2"
+            @click="sumarTieBreak6"
             title="Sumar puntos"
           ></div>
 
@@ -603,13 +603,13 @@
       <div class="grid content-end gap-1">
         <textarea
           v-model="jugador11"
-          class="bg-black text-white rounded-md resize-none truncate text text-4xl"
+          class=" text-white self-end rounded-md resize-none truncate text text-center text-5xl leading-normal h-20"
           spellcheck="false"
         >
         </textarea>
         <textarea
           v-model="jugador12"
-          class="bg-black text-white rounded-md resize-none truncate text text-4xl"
+          class=" text-white self-end rounded-md resize-none truncate text text-center text-5xl leading-normal h-20"
           spellcheck="false"
           maxlength=""
         >
@@ -751,16 +751,16 @@
     </div>
 
     <!-- COLUMNA ABAJO SET 3 -->
-    <div class="grid grid-cols-5 border-t-2 text-white justify-evenly">
+    <div class="grid grid-cols-5 mt-4 border-t-2 border-pink-600 text-white justify-evenly">
       <div class="grid content-end gap-1">
         <textarea
           v-model="jugador21"
-          class="bg-black text-white p-2 rounded-md w-auto resize-none truncate text text-5xl col-span-2"
+          class=" text-white self-end rounded-md resize-none truncate text text-center text-5xl leading-normal h-20"
           spellcheck="false"
         ></textarea>
         <textarea
           v-model="jugador22"
-          class="bg-black text-white p-2 rounded-md w-auto resize-none truncate text text-5xl col-span-2"
+          class=" text-white self-end rounded-md resize-none truncate text text-center text-5xl leading-normal h-20"
           spellcheck="false"
         ></textarea>
       </div>
@@ -904,22 +904,19 @@
     <div class="bg-rose-800">
       <div class="place-items-center bg-rose-800 text-center">
         <button
-          class="font-bold text-5xl mt-4 mb-4 text-white"
+          class=" mt-4 text-white"
           @click="irAinicio"
-        ></button>
+        ><img :src="marca" class="h-32 w-48" /></button>
       </div>
       <div class="grid grid-cols-4 p-4 text-white">
         <div class="grid gap-1">
           <div
-            class="text-white resize-none self-end truncate text text-5xl"
-            spellcheck="false"
+          class=" text-white self-end justify-center rounded-md resize-none truncate text text-5xl leading-normal h-20"
           >
             {{ jugador11 }}
           </div>
           <div
-            class="text-white self-center resize-none truncate text text-5xl"
-            spellcheck="false"
-            maxlength=""
+          class=" text-white justify-center rounded-md resize-none truncate text text-5xl leading-normal h-20"
           >
             {{ jugador12 }}
           </div>
@@ -967,13 +964,13 @@
       <div class="grid grid-cols-4 p-4 border-t-2 text-white">
         <div class="grid gap-1">
           <div
-            class="text-white self-end resize-none truncate text text-5xl"
+            class=" text-white self-end justify-center rounded-md resize-none truncate text text-5xl leading-normal h-20"
             spellcheck="false"
           >
             {{ jugador21 }}
           </div>
           <div
-            class="text-white self-center resize-none truncate text text-5xl"
+            class=" text-white justify-center rounded-md resize-none truncate text text-5xl leading-normal h-20"
             spellcheck="false"
           >
             {{ jugador22 }}
@@ -1010,6 +1007,7 @@ export default {
 
   data() {
     return {
+      marca: "/pavel.png",
       jugador11: "Jugador 1",
       jugador12: "Jugador 2",
       jugador21: "Jugador 3",
