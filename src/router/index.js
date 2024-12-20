@@ -7,6 +7,7 @@ import Botones from '@/components/Botones.vue'
 import BotonesVue from '@/components/BotonEspecial.vue'
 import OroDos from '@/components/OroDos.vue'
 import Sets3 from '@/components/SetsTres.vue'
+import FooterSets from '@/components/FooterSets.vue'
 const routes = [
   {
    

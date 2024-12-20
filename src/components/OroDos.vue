@@ -678,13 +678,15 @@
       </div>
     </div>
     </div>
+    <footer-sets/>
   </template>
   
   <script>
 import BannerTop from "./BannerTop.vue";
+import FooterSets from "./FooterSets.vue";
 
   export default {
-  components: { BannerTop },
+  components: { BannerTop,FooterSets },
     
   
     data() {

@@ -4,7 +4,7 @@
     content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
   />
   <div v-if="sets1 <2 && sets2<2">
-    <banner-top />
+    <banner-top /> 
   </div>
 
   <!-- TIE BREAK SET 2-->
@@ -101,7 +101,7 @@
   </div>
   <!-- FIN TIE BREAK SET 2-->
 
-  <!-- TIE BREAK 3-->
+ 
   <div
     class="grid grid-cols-3 gap-4 grid-rows-3"
     v-if="juegos5 === 6 && juegos6 === 6 && verTie3 === true"
@@ -356,7 +356,7 @@
             <!-- Botón para sumar -->
             <div
               class="flex-1 bg-rose-900"
-              @click="sumarJuegos3"
+              @click="sumarJuegos3(); mostrarSet3();"
               title="Sumar puntos"
             ></div>
             <!-- Botón para restar -->
@@ -387,7 +387,8 @@
             <!-- Fondo verde para sumar puntos -->
             <div
               class="flex-1 bg-rose-900"
-              @click="sumarPuntos1"
+                
+              @click="sumarPuntos1(); mostrarSet3();"
               title="Sumar puntos"
             ></div>
             <!-- Fondo rojo para restar puntos -->
@@ -474,14 +475,14 @@
 
           <!-- Botones superpuestos con fondos (verde para sumar y rojo para restar) -->
           <div class="absolute inset-0 flex flex-col">
-            <!-- Fondo verde para sumar puntos -->
+            <!-- Fondo para sumar puntos -->
             <div
               class="flex-1 bg-rose-900"
               @click="sumarJuegos2()"
               title="Sumar puntos"
             ></div>
 
-            <!-- Fondo rojo para restar puntos -->
+            <!-- Fondo para restar puntos -->
             <div
               class="flex-1 bg-rose-800"
               @click="restarJuegos2()"
@@ -996,14 +997,16 @@
         </div>
       </div>
     </div>
-  </div>
+    
+  </div><footer-sets/>
 </template>
 
 <script>
 import BannerTop from "./BannerTop.vue";
+import FooterSets from "./FooterSets.vue";
 
 export default {
-  components: { BannerTop },
+  components: { BannerTop,FooterSets },
 
   data() {
     return {
