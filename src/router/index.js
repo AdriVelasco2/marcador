@@ -7,6 +7,7 @@ import Botones from '@/components/Botones.vue'
 import BotonesVue from '@/components/BotonEspecial.vue'
 import OroDos from '@/components/OroDos.vue'
 import Sets3 from '@/components/SetsTres.vue'
+import Scoreboard from '@/components/Scoreboard.vue'
 const routes = [
   {
    
@@ -56,6 +57,18 @@ const routes = [
       // this generates a separate chunk (Home-[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: Sets3,
+    },
+  ],
+},
+{
+  children: [
+    {
+      path: '/new-scoreboard',
+      name: 'New Scoreboard',
+      // route level code-splitting
+      // this generates a separate chunk (Home-[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: Scoreboard,
     },
   ],
 },
